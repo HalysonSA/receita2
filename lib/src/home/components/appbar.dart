@@ -5,7 +5,25 @@ class NewAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(title: const Text("Dicas"));
+    return AppBar(
+      title: const Text("Dicas"),
+      actions: [
+        PopupMenuButton(
+          itemBuilder: (context) => [
+            const PopupMenuItem(
+              value: 1,
+              child: Text("Verde"),
+            ),
+            const PopupMenuItem(
+              child: Text("Amarelo"),
+            ),
+            const PopupMenuItem(
+              child: Text("Azul"),
+            ),
+          ],
+        )
+      ],
+    );
   }
 
   @override
